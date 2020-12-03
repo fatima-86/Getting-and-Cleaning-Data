@@ -53,9 +53,6 @@ humanActivity$activity <- factor(humanActivity$activity,
                                  levels = activities[, 1], labels = activities[, 2])
 
 
-##############################################################################
-# Step 4 - Appropriately label the data set with descriptive variable names
-##############################################################################
 
 # get column names
 humanActivityCols <- colnames(humanActivity)
@@ -79,11 +76,6 @@ humanActivityCols <- gsub("BodyBody", "Body", humanActivityCols)
 # use new labels as column names
 colnames(humanActivity) <- humanActivityCols
 
-
-##############################################################################
-# Step 5 - Create a second, independent tidy set with the average of each
-#          variable for each activity and each subject
-##############################################################################
 
 # group by subject and activity and summarise using mean
 humanActivityMeans <- humanActivity %>% 
